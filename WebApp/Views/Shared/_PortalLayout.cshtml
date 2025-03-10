@@ -16,7 +16,12 @@
 <body>
 
     <div class="portal">
-        <div class="side"></div>
+        <div class="side">
+            <div class="logotype"><img src="/Images/Alpha-icon.svg" alt="Logotype Alpha">Alpha</div>
+            <button class="btn side-link"><img src="/Images/Projects-icon.svg" alt="Briefcase image">Projects</button>
+            <div>
+            </div>
+        </div>
         <div class="top">
             <div class="search">sökfält</div>
             <div class="notice">
@@ -30,7 +35,18 @@
             </div>
         </div>
         <div class="main">
-            @RenderBody()
+            <div class="main-header">
+                <h2>Projects</h2>
+                <button class="btn btn-blue"><i class="bi bi-plus-lg"></i>Add Project</button>
+            </div>
+            <div class="main-menu-horizontal">
+                <button id="main-menu-all" class="btn-main-projects">ALL (8)</button>
+                <button id="main-menu-started" class="btn-main-projects">STARTED (8)</button>
+                <button id="main-menu-completed" class="btn-main-projects">COMPLETED (0)</button>
+            </div>
+            <div class="main-projects">
+                @RenderBody()
+            </div>
         </div>
     </div>
 
