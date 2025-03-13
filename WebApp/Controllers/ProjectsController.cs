@@ -2,9 +2,10 @@
 
 namespace WebApp.Controllers
 {
+    [Route("projects")]
     public class ProjectsController : Controller
     {
-        [Route("projects")]
+        [Route("")]
         public IActionResult Projects()
         {
             return View();

@@ -4,11 +4,10 @@ namespace WebApp.Controllers
 {
     public class AuthController : Controller
     {
-        
-
         public IActionResult Login()
         {
-            return View();
+            return LocalRedirect("/Projects");
+            //return View();
         }
     }
 }
