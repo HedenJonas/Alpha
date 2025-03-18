@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using WebApp.Models;
 
 namespace WebApp.Controllers
 {
@@ -6,8 +7,16 @@ namespace WebApp.Controllers
     {
         public IActionResult Login()
         {
-            return LocalRedirect("/Projects");
-            //return View();
+            var loginForm = new LoginFormModel();
+            return View(loginForm);
+        }
+
+        [HttpPost]
+        public IActionResult Login(LoginFormModel loginForm)
+        {
+            if (!ModelState.IsValid)
+                return View(loginForm);
+            return View();
         }
     }
 }

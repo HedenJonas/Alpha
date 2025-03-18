@@ -93,6 +93,7 @@
     --border-200: var(--dark-border-200);
     --heading-color: var(--white-100);
     --body-light-color: var(--dark-body-dark);
+    --surface-color: var(--dark-surface-1)
 }
 
 /* #region base */
@@ -127,11 +128,17 @@ html, body {
 
 .surface {
     padding: 2rem;
-    background-color: var(--background-color);
+    background-color: var(--surface-color);
     box-shadow: 0px 40px 30px -30px rgba(4, 15, 21, 0.06);
     border-radius: 1rem;
+    max-width: 37.5rem;
+    width: 100%;
 }
 
+.tac {
+    text-align: center;
+    margin: auto 0;
+}
 
 /* #endregion */
 
@@ -466,13 +473,122 @@ h6 {
 /* #endregion */
 
 /* #region Sections */
+.login-form {
+    padding: 0 4.25rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto auto auto auto auto;
+    grid-template-areas:
+        "header header"
+        "google google"
+        "divider divider"
+        "form form"
+        "remember remember"
+        "login login"
+        "signup signup";
+}
 
+    .login-form > .login-header {
+        grid-area: header;
+        padding-top: 4rem;
+    }
+
+    .login-form > .login-google {
+        grid-area: google;
+        padding: 2rem 0;
+    }
+
+        .login-form > .login-google > .link-google {
+            background-color: var(--btn-grey-background-color);
+            color: var(--btn-grey-text-color);
+            border: 1px solid var(--btn-grey-border-color);
+            position: relative;
+        }
+
+            .login-form > .login-google > .link-google:hover {
+                background-color: var(--btn-grey-hover-background-color);
+                color: var(--btn-grey-hover-text-color);
+                border: var(--btn-grey);
+            }
+
+            .login-form > .login-google > .link-google:active {
+                background-color: var(--btn-grey-background-color);
+                color: var(--btn-grey-text-color);
+                border: 1px solid var(--btn-grey-border-color);
+            }
+
+            .login-form > .login-google > .link-google > .google-icon {
+                position: absolute;
+                left: 1rem;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+    .login-form > .divider {
+        grid-area: divider;
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        opacity: 0.9;
+    }
+
+        .login-form > .divider > .line {
+            width: 100%;
+            height: 0.5px;
+            border: 1px solid var(--grey-800);
+        }
+
+        .login-form > .divider > .line-text {
+            color: var(--grey-800);
+            margin: auto 0;
+        }
+
+    .login-form > .form-login {
+        grid-area: form;
+        padding-top: 2rem;
+    }
+    .form-label {
+        font-family: var(--font-standard);
+        font-weight: var(--font-semibold);
+        color: var(--heading-color);
+    }
+
+    .login-form > .login-remember {
+        grid-area: remember;
+        display: flex;
+        justify-content: space-between;
+        padding-top: 1rem;
+        padding-bottom: 2rem;
+    }
+
+    .login-form > .btn-login {
+        grid-area: login;
+    }
+
+    .login-form > .login-signup {
+        grid-area: signup;
+        padding-top: 3rem;
+    }
+
+.form-link-style {
+    color: var(--accent-color);
+    text-decoration-line: none;
+}
+    .form-link-style:hover {
+        color: var(--dark-accent-color);
+    }
 /* #endregion */
 
 /* #region Views/pages */
 
 /* #endregion */
 
+/* #region validation */
+.field-validation-error {
+    font-size: .8em;
+    color: var(--red-color);
+}
+/* #endregion */
 .wrapper {
     background-color: var(--surface-color);
     padding: 1rem;

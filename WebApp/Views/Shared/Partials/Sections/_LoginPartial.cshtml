@@ -1,0 +1,54 @@
+﻿@model LoginFormModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<form method="post" class="login-form" novalidate>
+
+    <div class="tac login-header mt">
+        <h1>Login</h1>
+    </div>
+
+    <div class="tac login-google">
+        <a class="link-google btn" href="#">
+            <img class="google-icon" src="Images/google-icon.svg" alt="google-icon">
+            <span class="text-google">Login with Google</span>
+        </a>
+    </div>
+
+    <div class="divider">
+        <div class="line"></div>
+        <p class="line-text">OR</p>
+        <div class="line"></div>
+    </div>
+
+    <div class="form-login">
+        <div class="mb-3">
+            <label asp-for="Email" class="form-label"></label>
+            <input asp-for="Email" class="form-control" value="@Model.Email">
+            <span asp-validation-for="Email"></span>
+        </div>
+        
+        <div>
+            <label asp-for="Password" class="form-label"></label>
+            <input asp-for="Password" class="form-control" value="@Model.Password">
+            <span asp-validation-for="Password"></span>
+        </div>
+        
+    </div>
+
+    <div class="login-remember tac">
+        <label class="checkbox flex-row">
+            <input asp-for="RemeberMe" type="checkbox">
+            <span>Remember Me</span>
+        </label>
+        <a class="form-link-style flex-row" href="ForgotPassword">Forgot Password?</a>
+    </div>
+
+    <button class="btn btn-login btn-blue" id="submitAll" type="submit">Log in</button>
+
+    <div class="login-signup tac">
+        <p class="tac">Don´t have an account? <a class="form-link-style" href="SignUp.html">Sign up</a></p>
+    </div>
+
+</form>
